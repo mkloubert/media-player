@@ -21,5 +21,12 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-import * as Express from 'express';
+import * as mplayer_Server from './server';
 
+const SERVER = new mplayer_Server.Server();
+
+SERVER.start().then(() => {
+    console.log('Running');
+}).catch((err) => {
+    process.exit(1);
+});
